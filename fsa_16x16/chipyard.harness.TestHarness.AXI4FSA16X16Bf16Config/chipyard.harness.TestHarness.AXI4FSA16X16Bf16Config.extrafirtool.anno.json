@@ -1,0 +1,14 @@
+[
+	{
+		"class":"sifive.enterprise.firrtl.MarkDUTAnnotation",
+		"target":"~TestHarness|ChipTop"
+	},
+	{
+		"class": "sifive.enterprise.firrtl.TestHarnessHierarchyAnnotation",
+		"filename": "/data2/m0eric0315/hw/chipyard-fsa/sims/verilator/generated-src/chipyard.harness.TestHarness.AXI4FSA16X16Bf16Config/model_module_hierarchy.json"
+	},
+	{
+		"class": "sifive.enterprise.firrtl.ModuleHierarchyAnnotation",
+		"filename": "/data2/m0eric0315/hw/chipyard-fsa/sims/verilator/generated-src/chipyard.harness.TestHarness.AXI4FSA16X16Bf16Config/top_module_hierarchy.json"
+	}
+]

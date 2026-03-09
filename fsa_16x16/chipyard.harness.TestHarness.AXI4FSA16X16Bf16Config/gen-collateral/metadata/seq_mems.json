@@ -1,0 +1,50 @@
+[
+  {
+    "module_name": "banks_subBanks_sram_mem_ext",
+    "depth": 96,
+    "width": 64,
+    "masked": false,
+    "read": 1,
+    "write": 1,
+    "readwrite": 0,
+    "extra_ports": [],
+    "hierarchy": [
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_7.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_6.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_5.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_4.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_3.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_2.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem_1.banks_subBanks_sram_mem_ext",
+      "ChipTop.system.domain.fsa.fsa.spRAM_sram.banks_subBanks_sram_mem.banks_subBanks_sram_mem_ext"
+    ]
+  },
+  {
+    "module_name": "banks_subBanks_sram_mem_0_ext",
+    "depth": 17,
+    "width": 64,
+    "masked": false,
+    "read": 1,
+    "write": 1,
+    "readwrite": 0,
+    "extra_ports": [],
+    "hierarchy": [
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_15.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_14.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_13.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_12.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_11.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_10.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_9.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_8.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_7.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_6.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_5.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_4.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_3.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_2.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem_1.banks_subBanks_sram_mem_0_ext",
+      "ChipTop.system.domain.fsa.fsa.accRAM_sram.banks_subBanks_sram_mem.banks_subBanks_sram_mem_0_ext"
+    ]
+  }
+]
