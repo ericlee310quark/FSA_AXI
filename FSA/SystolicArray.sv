@@ -17527,6 +17527,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:31:41]
   PE mesh_0_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_0_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_0_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_0_bits_acc_ui),
@@ -17571,6 +17572,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_16),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_16_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_16_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17615,6 +17617,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_17),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_17_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_17_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17659,6 +17662,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_18),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_18_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_18_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17703,6 +17707,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_19),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_19_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_19_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17747,6 +17752,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_20),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_20_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_20_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17791,6 +17797,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_21),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_21_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_21_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17835,6 +17842,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_22),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_22_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_22_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17879,6 +17887,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_23),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_23_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_23_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17923,6 +17932,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_24),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_24_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_24_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -17967,6 +17977,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_25),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_25_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_25_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18011,6 +18022,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_26),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_26_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_26_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18055,6 +18067,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_27),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_27_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_27_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18099,6 +18112,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_28),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_28_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_28_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18143,6 +18157,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_29),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_29_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_29_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18187,6 +18202,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_0_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_30),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_30_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_30_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18231,6 +18247,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_1_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_1_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_1_bits_acc_ui),
@@ -18275,6 +18292,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_32),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_32_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_32_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18319,6 +18337,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_33),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_33_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_33_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18363,6 +18382,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_34),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_34_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_34_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18407,6 +18427,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_35),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_35_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_35_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18451,6 +18472,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_36),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_36_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_36_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18495,6 +18517,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_37),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_37_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_37_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18539,6 +18562,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_38),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_38_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_38_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18583,6 +18607,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_39),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_39_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_39_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18627,6 +18652,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_40),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_40_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_40_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18671,6 +18697,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_41),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_41_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_41_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18715,6 +18742,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_42),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_42_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_42_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18759,6 +18787,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_43),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_43_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_43_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18803,6 +18832,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_44),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_44_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_44_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18847,6 +18877,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_45),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_45_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_45_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18891,6 +18922,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_1_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_46),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_46_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_46_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -18935,6 +18967,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_2_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_2_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_2_bits_acc_ui),
@@ -18979,6 +19012,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_48),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_48_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_48_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19023,6 +19057,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_49),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_49_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_49_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19067,6 +19102,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_50),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_50_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_50_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19111,6 +19147,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_51),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_51_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_51_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19155,6 +19192,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_52),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_52_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_52_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19199,6 +19237,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_53),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_53_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_53_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19243,6 +19282,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_54),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_54_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_54_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19287,6 +19327,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_55),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_55_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_55_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19331,6 +19372,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_56),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_56_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_56_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19375,6 +19417,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_57),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_57_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_57_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19419,6 +19462,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_58),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_58_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_58_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19463,6 +19507,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_59),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_59_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_59_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19507,6 +19552,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_60),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_60_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_60_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19551,6 +19597,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_61),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_61_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_61_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19595,6 +19642,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_2_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_62),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_62_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_62_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19639,6 +19687,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_3_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_3_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_3_bits_acc_ui),
@@ -19683,6 +19732,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_64),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_64_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_64_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19727,6 +19777,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_65),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_65_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_65_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19771,6 +19822,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_66),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_66_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_66_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19815,6 +19867,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_67),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_67_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_67_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19859,6 +19912,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_68),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_68_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_68_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19903,6 +19957,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_69),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_69_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_69_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19947,6 +20002,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_70),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_70_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_70_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -19991,6 +20047,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_71),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_71_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_71_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20035,6 +20092,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_72),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_72_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_72_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20079,6 +20137,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_73),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_73_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_73_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20123,6 +20182,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_74),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_74_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_74_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20167,6 +20227,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_75),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_75_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_75_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20211,6 +20272,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_76),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_76_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_76_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20255,6 +20317,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_77),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_77_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_77_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20299,6 +20362,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_3_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_78),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_78_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_78_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20343,6 +20407,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_4_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_4_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_4_bits_acc_ui),
@@ -20387,6 +20452,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_80),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_80_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_80_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20431,6 +20497,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_81),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_81_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_81_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20475,6 +20542,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_82),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_82_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_82_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20519,6 +20587,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_83),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_83_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_83_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20563,6 +20632,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_84),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_84_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_84_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20607,6 +20677,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_85),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_85_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_85_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20651,6 +20722,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_86),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_86_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_86_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20695,6 +20767,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_87),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_87_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_87_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20739,6 +20812,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_88),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_88_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_88_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20783,6 +20857,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_89),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_89_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_89_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20827,6 +20902,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_90),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_90_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_90_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20871,6 +20947,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_91),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_91_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_91_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20915,6 +20992,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_92),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_92_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_92_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -20959,6 +21037,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_93),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_93_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_93_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21003,6 +21082,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_4_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_94),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_94_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_94_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21047,6 +21127,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_5_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_5_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_5_bits_acc_ui),
@@ -21091,6 +21172,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_96),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_96_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_96_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21135,6 +21217,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_97),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_97_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_97_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21179,6 +21262,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_98),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_98_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_98_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21223,6 +21307,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_99),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_99_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_99_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21267,6 +21352,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_100),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_100_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_100_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21311,6 +21397,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_101),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_101_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_101_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21355,6 +21442,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_102),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_102_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_102_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21399,6 +21487,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_103),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_103_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_103_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21443,6 +21532,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_104),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_104_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_104_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21487,6 +21577,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_105),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_105_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_105_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21531,6 +21622,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_106),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_106_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_106_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21575,6 +21667,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_107),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_107_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_107_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21619,6 +21712,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_108),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_108_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_108_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21663,6 +21757,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_109),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_109_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_109_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21707,6 +21802,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_5_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_110),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_110_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_110_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21751,6 +21847,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_6_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_6_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_6_bits_acc_ui),
@@ -21795,6 +21892,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_112),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_112_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_112_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21839,6 +21937,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_113),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_113_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_113_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21883,6 +21982,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_114),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_114_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_114_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21927,6 +22027,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_115),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_115_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_115_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -21971,6 +22072,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_116),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_116_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_116_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22015,6 +22117,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_117),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_117_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_117_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22059,6 +22162,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_118),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_118_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_118_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22103,6 +22207,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_119),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_119_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_119_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22147,6 +22252,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_120),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_120_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_120_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22191,6 +22297,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_121),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_121_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_121_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22235,6 +22342,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_122),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_122_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_122_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22279,6 +22387,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_123),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_123_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_123_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22323,6 +22432,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_124),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_124_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_124_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22367,6 +22477,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_125),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_125_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_125_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22411,6 +22522,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_6_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_126),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_126_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_126_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22455,6 +22567,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_7_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_7_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_7_bits_acc_ui),
@@ -22499,6 +22612,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_128),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_128_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_128_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22543,6 +22657,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_129),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_129_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_129_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22587,6 +22702,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_130),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_130_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_130_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22631,6 +22747,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_131),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_131_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_131_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22675,6 +22792,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_132),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_132_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_132_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22719,6 +22837,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_133),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_133_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_133_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22763,6 +22882,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_134),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_134_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_134_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22807,6 +22927,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_135),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_135_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_135_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22851,6 +22972,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_136),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_136_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_136_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22895,6 +23017,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_137),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_137_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_137_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22939,6 +23062,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_138),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_138_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_138_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -22983,6 +23107,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_139),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_139_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_139_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23027,6 +23152,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_140),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_140_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_140_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23071,6 +23197,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_141),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_141_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_141_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23115,6 +23242,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_7_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_142),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_142_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_142_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23159,6 +23287,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_8_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_8_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_8_bits_acc_ui),
@@ -23203,6 +23332,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_144),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_144_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_144_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23247,6 +23377,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_145),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_145_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_145_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23291,6 +23422,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_146),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_146_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_146_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23335,6 +23467,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_147),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_147_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_147_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23379,6 +23512,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_148),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_148_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_148_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23423,6 +23557,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_149),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_149_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_149_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23467,6 +23602,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_150),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_150_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_150_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23511,6 +23647,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_151),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_151_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_151_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23555,6 +23692,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_152),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_152_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_152_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23599,6 +23737,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_153),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_153_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_153_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23643,6 +23782,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_154),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_154_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_154_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23687,6 +23827,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_155),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_155_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_155_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23731,6 +23872,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_156),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_156_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_156_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23775,6 +23917,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_157),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_157_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_157_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23819,6 +23962,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_8_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_158),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_158_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_158_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23863,6 +24007,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_9_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_9_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_9_bits_acc_ui),
@@ -23907,6 +24052,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_160),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_160_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_160_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23951,6 +24097,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_161),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_161_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_161_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -23995,6 +24142,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_162),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_162_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_162_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24039,6 +24187,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_163),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_163_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_163_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24083,6 +24232,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_164),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_164_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_164_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24127,6 +24277,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_165),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_165_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_165_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24171,6 +24322,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_166),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_166_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_166_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24215,6 +24367,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_167),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_167_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_167_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24259,6 +24412,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_168),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_168_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_168_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24303,6 +24457,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_169),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_169_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_169_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24347,6 +24502,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_170),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_170_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_170_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24391,6 +24547,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_171),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_171_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_171_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24435,6 +24592,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_172),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_172_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_172_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24479,6 +24637,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_173),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_173_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_173_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24523,6 +24682,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_9_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_174),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_174_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_174_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24567,6 +24727,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_10_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_10_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_10_bits_acc_ui),
@@ -24611,6 +24772,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_176),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_176_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_176_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24655,6 +24817,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_177),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_177_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_177_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24699,6 +24862,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_178),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_178_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_178_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24743,6 +24907,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_179),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_179_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_179_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24787,6 +24952,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_180),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_180_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_180_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24831,6 +24997,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_181),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_181_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_181_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24875,6 +25042,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_182),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_182_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_182_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24919,6 +25087,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_183),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_183_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_183_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -24963,6 +25132,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_184),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_184_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_184_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25007,6 +25177,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_185),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_185_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_185_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25051,6 +25222,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_186),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_186_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_186_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25095,6 +25267,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_187),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_187_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_187_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25139,6 +25312,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_188),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_188_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_188_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25183,6 +25357,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_189),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_189_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_189_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25227,6 +25402,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_10_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_190),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_190_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_190_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25271,6 +25447,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_11_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_11_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_11_bits_acc_ui),
@@ -25315,6 +25492,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_192),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_192_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_192_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25359,6 +25537,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_193),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_193_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_193_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25403,6 +25582,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_194),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_194_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_194_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25447,6 +25627,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_195),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_195_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_195_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25491,6 +25672,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_196),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_196_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_196_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25535,6 +25717,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_197),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_197_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_197_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25579,6 +25762,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_198),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_198_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_198_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25623,6 +25807,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_199),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_199_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_199_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25667,6 +25852,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_200),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_200_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_200_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25711,6 +25897,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_201),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_201_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_201_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25755,6 +25942,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_202),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_202_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_202_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25799,6 +25987,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_203),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_203_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_203_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25843,6 +26032,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_204),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_204_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_204_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25887,6 +26077,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_205),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_205_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_205_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25931,6 +26122,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_11_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_206),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_206_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_206_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -25975,6 +26167,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_12_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_12_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_12_bits_acc_ui),
@@ -26019,6 +26212,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_208),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_208_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_208_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26063,6 +26257,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_209),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_209_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_209_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26107,6 +26302,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_210),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_210_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_210_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26151,6 +26347,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_211),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_211_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_211_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26195,6 +26392,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_212),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_212_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_212_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26239,6 +26437,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_213),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_213_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_213_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26283,6 +26482,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_214),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_214_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_214_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26327,6 +26527,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_215),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_215_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_215_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26371,6 +26572,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_216),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_216_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_216_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26415,6 +26617,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_217),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_217_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_217_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26459,6 +26662,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_218),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_218_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_218_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26503,6 +26707,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_219),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_219_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_219_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26547,6 +26752,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_220),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_220_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_220_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26591,6 +26797,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_221),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_221_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_221_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26635,6 +26842,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_12_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_222),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_222_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_222_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26679,6 +26887,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_13_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_13_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_13_bits_acc_ui),
@@ -26723,6 +26932,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_224),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_224_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_224_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26767,6 +26977,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_225),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_225_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_225_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26811,6 +27022,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_226),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_226_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_226_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26855,6 +27067,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_227),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_227_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_227_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26899,6 +27112,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_228),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_228_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_228_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26943,6 +27157,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_229),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_229_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_229_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -26987,6 +27202,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_230),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_230_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_230_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27031,6 +27247,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_231),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_231_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_231_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27075,6 +27292,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_232),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_232_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_232_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27119,6 +27337,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_233),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_233_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_233_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27163,6 +27382,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_234),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_234_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_234_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27207,6 +27427,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_235),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_235_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_235_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27251,6 +27472,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_236),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_236_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_236_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27295,6 +27517,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_237),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_237_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_237_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27339,6 +27562,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_13_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_238),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_238_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_238_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27383,6 +27607,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_14_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_14_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_14_bits_acc_ui),
@@ -27427,6 +27652,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_240),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_240_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_240_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27471,6 +27697,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_241),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_241_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_241_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27515,6 +27742,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_242),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_242_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_242_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27559,6 +27787,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_243),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_243_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_243_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27603,6 +27832,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_244),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_244_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_244_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27647,6 +27877,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_245),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_245_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_245_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27691,6 +27922,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_246),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_246_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_246_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27735,6 +27967,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_247),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_247_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_247_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27779,6 +28012,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_248),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_248_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_248_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27823,6 +28057,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_249),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_249_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_249_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27867,6 +28102,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_250),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_250_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_250_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27911,6 +28147,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_251),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_251_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_251_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27955,6 +28192,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_252),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_252_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_252_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -27999,6 +28237,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_253),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_253_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_253_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28043,6 +28282,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_14_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_254),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_254_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_254_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28087,6 +28327,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_0 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (io_pe_ctrl_15_valid),
     .io_in_ctrl_bits_mac          (io_pe_ctrl_15_bits_mac),
     .io_in_ctrl_bits_acc_ui       (io_pe_ctrl_15_bits_acc_ui),
@@ -28131,6 +28372,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_1 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_256),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_256_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_256_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28175,6 +28417,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_2 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_257),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_257_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_257_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28219,6 +28462,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_3 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_258),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_258_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_258_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28263,6 +28507,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_4 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_259),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_259_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_259_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28307,6 +28552,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_5 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_260),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_260_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_260_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28351,6 +28597,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_6 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_261),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_261_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_261_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28395,6 +28642,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_7 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_262),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_262_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_262_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28439,6 +28687,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_8 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_263),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_263_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_263_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28483,6 +28732,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_9 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_264),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_264_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_264_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28527,6 +28777,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_10 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_265),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_265_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_265_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28571,6 +28822,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_11 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_266),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_266_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_266_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28615,6 +28867,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_12 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_267),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_267_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_267_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28659,6 +28912,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_13 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_268),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_268_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_268_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28703,6 +28957,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_14 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_269),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_269_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_269_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
@@ -28747,6 +29002,7 @@ module SystolicArray(
   );	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
   PE mesh_15_15 (	// @[generators/fsa/src/main/scala/fsa/sa/SystolicArray.scala:34:56]
     .clock                        (clock),
+    .reset                        (reset),
     .io_in_ctrl_valid             (pipe_v_270),	// @[src/main/scala/chisel3/util/Valid.scala:141:24]
     .io_in_ctrl_bits_mac          (pipe_b_270_mac),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]
     .io_in_ctrl_bits_acc_ui       (pipe_b_270_acc_ui),	// @[src/main/scala/chisel3/util/Valid.scala:142:26]

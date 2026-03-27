@@ -376,7 +376,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_0_0_writePorts_0_data_3, banks_0_0_writePorts_0_data_2, banks_0_0_writePorts_0_data_1, banks_0_0_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_1 banks_subBanks_sram_mem_1 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_1 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & ~(io_fullRead_0_addr[0])),	
     .R0_clk  (clock),
@@ -386,7 +386,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_0_1_writePorts_0_data_3, banks_0_1_writePorts_0_data_2, banks_0_1_writePorts_0_data_1, banks_0_1_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_2 banks_subBanks_sram_mem_2 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_2 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & ~(io_fullRead_0_addr[0])),	
     .R0_clk  (clock),
@@ -396,7 +396,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_0_2_writePorts_0_data_3, banks_0_2_writePorts_0_data_2, banks_0_2_writePorts_0_data_1, banks_0_2_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_3 banks_subBanks_sram_mem_3 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_3 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & ~(io_fullRead_0_addr[0])),	
     .R0_clk  (clock),
@@ -406,7 +406,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_0_3_writePorts_0_data_3, banks_0_3_writePorts_0_data_2, banks_0_3_writePorts_0_data_1, banks_0_3_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_4 banks_subBanks_sram_mem_4 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_4 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & io_fullRead_0_addr[0]),	
     .R0_clk  (clock),
@@ -416,7 +416,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_1_0_writePorts_0_data_3, banks_1_0_writePorts_0_data_2, banks_1_0_writePorts_0_data_1, banks_1_0_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_5 banks_subBanks_sram_mem_5 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_5 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & io_fullRead_0_addr[0]),	
     .R0_clk  (clock),
@@ -426,7 +426,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_1_1_writePorts_0_data_3, banks_1_1_writePorts_0_data_2, banks_1_1_writePorts_0_data_1, banks_1_1_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_6 banks_subBanks_sram_mem_6 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_6 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & io_fullRead_0_addr[0]),	
     .R0_clk  (clock),
@@ -436,7 +436,7 @@ module ScratchPadSRAM(
     .W0_clk  (clock),
     .W0_data ({banks_1_2_writePorts_0_data_3, banks_1_2_writePorts_0_data_2, banks_1_2_writePorts_0_data_1, banks_1_2_writePorts_0_data_0})	
   );	
-  banks_subBanks_sram_mem_7 banks_subBanks_sram_mem_7 (	
+  banks_subBanks_sram_mem banks_subBanks_sram_mem_7 (	
     .R0_addr (io_fullRead_0_addr),
     .R0_en   (io_fullRead_0_valid & io_fullRead_0_addr[0]),	
     .R0_clk  (clock),

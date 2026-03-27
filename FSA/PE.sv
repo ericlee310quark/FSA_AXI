@@ -1,6 +1,12 @@
-
+//*******************************************************
+//
+// 1. add reset signal
+//
+//*******************************************************
 module PE(	
-  input         clock,	
+  input         clock,
+  input         reset,
+
   input         io_in_ctrl_valid,	
   input         io_in_ctrl_bits_mac,	
   input         io_in_ctrl_bits_acc_ui,	
@@ -58,23 +64,32 @@ module PE(
   wire        _io_d_output_valid_T = io_in_ctrl_bits_mac & io_in_ctrl_bits_acc_ui;	
   wire        _io_u_output_bits_T_1 = io_in_ctrl_bits_mac & ~io_in_ctrl_bits_acc_ui;	
   always @(posedge clock) begin	
-    if (io_in_ctrl_valid) begin	
-      if (io_in_ctrl_bits_load_reg_li) begin	
-        reg_sign <= io_l_input_bits_sign;	
-        reg_exp <= io_l_input_bits_exp;	
-        reg_mantissa <= io_l_input_bits_mantissa;	
+    if (reset)begin
+      reg_sign      <= 'd0;
+      reg_exp       <= 'd0;
+      reg_mantissa  <= 'd0;
+      exp2Done      <= 'd0;
+    end
+    else begin
+      if (io_in_ctrl_valid) begin	
+        if (io_in_ctrl_bits_load_reg_li) begin	
+          reg_sign <= io_l_input_bits_sign;	
+          reg_exp <= io_l_input_bits_exp;	
+          reg_mantissa <= io_l_input_bits_mantissa;	
+        end
+        else if (io_in_ctrl_bits_load_reg_ui) begin	
+          reg_sign <= io_u_input_bits_mantissa[15];	
+          reg_exp <= io_u_input_bits_mantissa[14:10];	
+          reg_mantissa <= io_u_input_bits_mantissa[9:0];	
+        end
+        else if (io_in_ctrl_bits_update_reg | _macUnit_io_out_exp2 & ~exp2Done) begin	
+          reg_sign <= _macUnit_io_out_elemType_sign;	
+          reg_exp <= _macUnit_io_out_elemType_exp;	
+          reg_mantissa <= _macUnit_io_out_elemType_mantissa;	
+        end
+        exp2Done <= io_in_ctrl_bits_exp2 & (exp2Done | _macUnit_io_out_exp2);	
       end
-      else if (io_in_ctrl_bits_load_reg_ui) begin	
-        reg_sign <= io_u_input_bits_mantissa[15];	
-        reg_exp <= io_u_input_bits_mantissa[14:10];	
-        reg_mantissa <= io_u_input_bits_mantissa[9:0];	
-      end
-      else if (io_in_ctrl_bits_update_reg | _macUnit_io_out_exp2 & ~exp2Done) begin	
-        reg_sign <= _macUnit_io_out_elemType_sign;	
-        reg_exp <= _macUnit_io_out_elemType_exp;	
-        reg_mantissa <= _macUnit_io_out_elemType_mantissa;	
-      end
-      exp2Done <= io_in_ctrl_bits_exp2 & (exp2Done | _macUnit_io_out_exp2);	
+
     end
   end // always @(posedge)
   

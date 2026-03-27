@@ -10,15 +10,29 @@ module banks_subBanks_sram_mem(
   input  [63:0] W0_data
 );
 
-  banks_subBanks_sram_mem_ext banks_subBanks_sram_mem_ext (	
-    .R0_addr (R0_addr),
-    .R0_en   (R0_en),
-    .R0_clk  (R0_clk),
-    .R0_data (R0_data),
-    .W0_addr (W0_addr),
-    .W0_en   (W0_en),
-    .W0_clk  (W0_clk),
-    .W0_data (W0_data)
-  );	
+// 定義記憶體陣列：128 個 64-bit 寬度的暫存器
+  reg [63:0] mem [0:127];
+  // 用於讀取資料的暫存器
+  reg [63:0] rdata_reg;
+
+  // --- 寫入邏輯 (Write Port) ---
+  // 當 W0_en 為高準位時，在 W0_clk 上升沿將資料寫入指定地址
+  always @(posedge W0_clk) begin
+    if (W0_en) begin
+      mem[W0_addr] <= W0_data;
+    end
+  end
+
+  // --- 讀取邏輯 (Read Port) ---
+  // 模擬同步讀取行為 (Synchronous Read)
+  always @(posedge R0_clk) begin
+    if (R0_en) begin
+      rdata_reg <= mem[R0_addr];
+    end
+  end
+
+  // 將內部暫存器的值輸出
+  assign R0_data = rdata_reg;
+
 endmodule
 
