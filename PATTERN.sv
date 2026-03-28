@@ -149,16 +149,51 @@ begin
 end
 always #(CYCLE/2.0) clock = ~clock;
 //================================================================
-// wires & parameters & integer
+// Parameters & Integer
 //================================================================
 
 
+parameters Q_Width = 16, Q_Height = 16;
+parameters K_Width = 16, K_Height = 16;
+parameters V_Width = 16, V_Height = 16;
+
+parameters Q_bandwith = 16;
+parameters K_bandwith = 16;
+parameters V_bandwith = 16;
 
 
 
+//-------------------------------------
+// FILE NAMES DEFINE
+//-------------------------------------
+`define Q_HEX_FILENAME "./golden_ans/Q.hex"
+`define K_HEX_FILENAME "./golden_ans/K.hex"
+`define V_HEX_FILENAME "./golden_ans/V.hex"
 
 
+//-------------------------------------
+// Golden Truth Use
+//-------------------------------------
+reg  [Q_bandwith-1:0] Q_matrix_gt [Q_Height*Q_Weight-1:0];
+reg  [K_bandwith-1:0] K_matrix_gt [K_Height*K_Weight-1:0];
+reg  [V_bandwith-1:0] V_matrix_gt [V_Height*V_Weight-1:0];
 
+
+//! There is no  `io_spand_write_0_ready` signal.
+//================================================================
+// WIRES & REGS
+//================================================================
+reg          io_spad_write_valid_reg [7:0];
+reg  [6:0]   io_spad_write_addr_reg [7:0];
+reg  [1:0]  io_spad_write_subBankIdx_reg [7:0];
+reg  [15:0] io_spad_write_data_0_reg [7:0];
+reg  [15:0] io_spad_write_data_1_reg [7:0];
+reg  [15:0] io_spad_write_data_2_reg [7:0];
+reg  [15:0] io_spad_write_data_3_reg [7:0];
+
+reg        io_acc_read_valid_reg        [7:0];
+reg  [4:0] io_acc_read_addr_reg         [7:0];
+reg  [2:0] io_acc_read_subBankIdx_reg   [7:0];
 
 
 
@@ -316,8 +351,6 @@ task idle_acc;
     end
 endtask
 
-
-
 task idle_all;
     begin
         idle_inst;
@@ -326,6 +359,52 @@ task idle_all;
     end
 endtask
 
+task load_hex_QKV;
+    begin
+        $readmemh(Q_HEX_FILENAME, Q_matrix_gt);
+        $$display("Load Q_gth");
+        $readmemh(K_HEX_FILENAME, K_matrix_gt);
+        $$display("Load K_gth");
+        $readmemh(V_HEX_FILENAME, V_matrix_gt);
+        $$display("Load V_gth");
+    end
+endtask
+
+
+task spad_write_wrap;
+begin
+
+
+end
+endtask
+
+
+
+
+task load_Q2SPAD;
+    begin
+        fork 
+            begin
+                for(integer Q_COL_by_4 = 0; Q_COL_by_4 < (Q_Width<<2); Q_COL_by_4 = Q_COL_by_4 + 'd1)begin
+                    spad_write('d0, )
+
+                end
+            end
+        join
+
+
+
+        $readmemh(Q_HEX_FILENAME, Q_matrix_gt);
+        $$display("Load Q_gth");
+        $readmemh(K_HEX_FILENAME, K_matrix_gt);
+        $$display("Load K_gth");
+        $readmemh(V_HEX_FILENAME, V_matrix_gt);
+        $$display("Load V_gth");
+    end
+endtask
+
+
+
 
 
 
@@ -333,10 +412,20 @@ endtask
 // Write one row to ScratchPad (single cycle, port 0, subBankIdx=0)
 task spad_write;
 input [31:0] port_idx;
-input []     input_SubBankID;
+input [1:0]  input_SubBankID;
 input [4:0]  addr;
 input [15:0] d0, d1, d2, d3;
 begin
+
+    io_spad_write_valid_reg[port_idx]           = 'd1;
+    io_spad_write_addr[port_idx]                = addr;
+    io_spad_write_subBankIdx_reg[port_idx]      = input_SubBankID;
+    io_spad_write_data_0_reg[port_idx]          = d0;
+    io_spad_write_data_1_reg[port_idx]          = d1;
+    io_spad_write_data_2_reg[port_idx]          = d2;
+    io_spad_write_data_3_reg[port_idx]          = d3;
+
+
     if (port_idx=='d0)begin
         io_spad_write_0_valid =	'd1;
         io_spad_write_0_addr  = addr;
@@ -346,7 +435,9 @@ begin
         io_spad_write_0_data_2 = d2;
         io_spad_write_0_data_3 = d3;
     end
+    else begin
 
+    end
 
 
 
@@ -366,10 +457,86 @@ endtask
 
 
 
+reg [7:0] [1:0] spad_sub_bank_id_cnt;
+
+
+task load_Q_row0
+    input [1:0]  input_SubBankID;
+    input [4:0]  addr;
+    input [15:0] d0, d1, d2, d3;
+
+    begin
+        spad_write('d0, input_SubBankID, )
+
+    end
+endtask
 
 
 
 
+
+
+
+
+
+task load_Q;
+    begin
+       
+        for (integer spad_sub_bank_id_cnt_idx = 'd0; spad_sub_bank_id_cnt_idx < 'd8; spad_sub_bank_id_cnt_idx = spad_sub_bank_id_cnt_idx + 'd1)
+            spad_sub_bank_id_cnt[spad_sub_bank_id_cnt_idx] = 'd0;
+
+        fork
+            
+
+
+
+
+        join
+
+        
+
+
+
+
+
+    end
+endtask
+
+
+
+
+
+
+
+
+
+
+
+
+assign io_acc_read_0_valid =        io_acc_read_valid_reg[0];
+assign io_acc_read_0_addr =         io_acc_read_addr_reg[0];
+assign io_acc_read_0_subBankIdx =   io_acc_read_subBankIdx_reg[0];
+assign io_acc_read_1_valid =        io_acc_read_valid_reg[1];
+assign io_acc_read_1_addr =         io_acc_read_addr_reg[1];
+assign io_acc_read_1_subBankIdx =   io_acc_read_subBankIdx_reg[1];
+assign io_acc_read_2_valid =        io_acc_read_valid_reg[2];
+assign io_acc_read_2_addr =         io_acc_read_addr_reg[2];
+assign io_acc_read_2_subBankIdx =   io_acc_read_subBankIdx_reg[2];
+assign io_acc_read_3_valid =        io_acc_read_valid_reg[3];
+assign io_acc_read_3_addr =         io_acc_read_addr_reg[3];
+assign io_acc_read_3_subBankIdx =   io_acc_read_subBankIdx_reg[3];
+assign io_acc_read_4_valid =        io_acc_read_valid_reg[4];
+assign io_acc_read_4_addr =         io_acc_read_addr_reg[4];
+assign io_acc_read_4_subBankIdx =   io_acc_read_subBankIdx_reg[4];
+assign io_acc_read_5_valid =        io_acc_read_valid_reg[5];
+assign io_acc_read_5_addr =         io_acc_read_addr_reg[5];
+assign io_acc_read_5_subBankIdx =   io_acc_read_subBankIdx_reg[5];
+assign io_acc_read_6_valid =        io_acc_read_valid_reg[6];
+assign io_acc_read_6_addr =         io_acc_read_addr_reg[6];
+assign io_acc_read_6_subBankIdx =   io_acc_read_subBankIdx_reg[6];
+assign io_acc_read_7_valid =        io_acc_read_valid_reg[7];
+assign io_acc_read_7_addr =         io_acc_read_addr_reg[7];
+assign io_acc_read_7_subBankIdx =   io_acc_read_subBankIdx_reg[7];
 
 
 
