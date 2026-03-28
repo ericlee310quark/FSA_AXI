@@ -333,19 +333,18 @@ endtask
 // Write one row to ScratchPad (single cycle, port 0, subBankIdx=0)
 task spad_write;
 input [31:0] port_idx;
+input []     input_SubBankID;
 input [4:0]  addr;
 input [15:0] d0, d1, d2, d3;
 begin
     if (port_idx=='d0)begin
-        io_spad_write_0_valid,	
-        io_spad_write_0_addr,	
-        io_spad_write_0_subBankIdx,	
-        io_spad_write_0_data_0,	
-        io_spad_write_0_data_1,	
-        io_spad_write_0_data_2,	
-        io_spad_write_0_data_3,	
-        io_spad_write_1_valid,	
-        io_spad_write_1_addr,	
+        io_spad_write_0_valid =	'd1;
+        io_spad_write_0_addr  = addr;
+        io_spad_write_0_subBankIdx = input_SubBankID;
+        io_spad_write_0_data_0 = d0;	
+        io_spad_write_0_data_1 = d1;
+        io_spad_write_0_data_2 = d2;
+        io_spad_write_0_data_3 = d3;
     end
 
 
