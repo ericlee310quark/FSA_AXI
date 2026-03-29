@@ -152,7 +152,9 @@ always #(CYCLE/2.0) clock = ~clock;
 // Parameters & Integer
 //================================================================
 
-
+parameters MATRIX_MEM_ADDR_SPACE = 8;
+parameters SPAD_CHANNEL_NUM = 8;
+parameters SPAD_CHANNEL_SPACE = 3;
 parameters Q_Width = 16, Q_Height = 16;
 parameters K_Width = 16, K_Height = 16;
 parameters V_Width = 16, V_Height = 16;
@@ -196,35 +198,41 @@ reg  [4:0] io_acc_read_addr_reg         [7:0];
 reg  [2:0] io_acc_read_subBankIdx_reg   [7:0];
 
 
+wire io_acc_read_ready_wires[SPAD_CHANNEL_NUM-1:0];
 
 
 
 
+
+assign io_acc_read_ready_wires = {1'd0, io_acc_read_7_ready, io_acc_read_6_ready, io_acc_read_5_ready, io_acc_read_4_ready, io_acc_read_3_ready, io_acc_read_2_ready, io_acc_read_1_ready, io_acc_read_0_ready};
 
 
 //================================================================
 //    initial
 //================================================================
 initial begin
-	rst_n = 1'b1;
-	in_valid = 1'b0;
-	cg_en = 1'b0;
-
-	img = 'dx;
-	ker = 'dx;
-	weight = 'dx;
-    total_latency = 0;
-	force clk = 0;
-	reset_signal_task;
 	
-	for (patcount = 0; patcount < PATNUM; patcount = patcount + 1) begin
-		gen_rnd_data;
-		gen_golden_out;
-		input_task;
-		wait_out_valid;
-		check_ans;
-	end
-	YOU_PASS_task;
+    load_hex_QKV;
+    load_Q2SPAD_16x16;
+    //rst_n = 1'b1;
+	//in_valid = 1'b0;
+	//cg_en = 1'b0;
+//
+	//img = 'dx;
+	//ker = 'dx;
+	//weight = 'dx;
+    //total_latency = 0;
+	//force clk = 0;
+	//reset_signal_task;
+	//
+	//for (patcount = 0; patcount < PATNUM; patcount = patcount + 1) begin
+	//	gen_rnd_data;
+	//	gen_golden_out;
+	//	input_task;
+	//	wait_out_valid;
+	//	check_ans;
+	//end
+	//YOU_PASS_task;
 end
 
 
@@ -362,47 +370,140 @@ endtask
 task load_hex_QKV;
     begin
         $readmemh(Q_HEX_FILENAME, Q_matrix_gt);
-        $$display("Load Q_gth");
+        $display("Load Q_gth");
         $readmemh(K_HEX_FILENAME, K_matrix_gt);
-        $$display("Load K_gth");
+        $display("Load K_gth");
         $readmemh(V_HEX_FILENAME, V_matrix_gt);
-        $$display("Load V_gth");
+        $display("Load V_gth");
     end
 endtask
 
-
+//MAX LENGTH 16x16
 task spad_write_wrap;
+input [31:0] port_idx;
+input [6:0] addr;
+input [1:0] sub_bank_id;
+input integer length;
 begin
+    integer addr_idx = 0;
+    integer spad_write_latency = 0;
+    reg [8:0] temp_total_addr;
+    temp_total_addr = {addr, sub_bank_id};
+    if (port_idx != 'd0)begin
+        for(integer curr_idx=0; curr_idx < (length); curr_idx = curr_idx + 'd1)begin
+            temp_total_addr = temp_total_addr + curr_idx<<2;
+            spad_write( .port_idx(port_idx),
+                        .input_SubBankID(temp_total_addr[1:0]),
+                        .addr(temp_total_addr[6:2]),
+                        .in_valid('d1),
+                        .d0(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]]),
+                        .d1(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+1]),
+                        .d2(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+2]),
+                        .d3(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+3])
+                        );
+
+        end
+            spad_write( .port_idx(port_idx),
+                        .input_SubBankID(temp_total_addr[1:0]),
+                        .addr(temp_total_addr[6:2]),
+                        .in_valid('d0),
+                        .d0(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]]),
+                        .d1(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+1]),
+                        .d2(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+2]),
+                        .d3(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+3])
+                        );
+    end
+    else begin
+        for(integer curr_idx=0; curr_idx < (length); curr_idx = curr_idx + 'd1)begin
+            temp_total_addr = temp_total_addr + curr_idx<<2;
+            spad_write( .port_idx(port_idx),
+                        .input_SubBankID(temp_total_addr[1:0]),
+                        .addr(temp_total_addr[6:2]),
+                        .in_valid('d1),
+                        .d0(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]]),
+                        .d1(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+1]),
+                        .d2(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+2]),
+                        .d3(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+3])
+                        );
+            while (~io_acc_read_ready_wires[port_idx[SPAD_CHANNEL_SPACE-1:0]]) begin
+                @(posedge clock);
+                spad_write_latency = spad_write_latency +'d1
+
+                if (spad_write_latency > 'd100)begin
+                    $display("SPAD WRITE wait for ready too long: Port %0d | spad_write_latency %d ",port_idx, spad_write_latency);
+                    $finish;
+                end
+            end
+
+        end
+            spad_write( .port_idx(port_idx),
+                        .input_SubBankID(temp_total_addr[1:0]),
+                        .addr(temp_total_addr[6:2]),
+                        .in_valid('d0),
+                        .d0(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]]),
+                        .d1(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+1]),
+                        .d2(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+2]),
+                        .d3(Q_matrix_gt[temp_total_addr[MATRIX_MEM_ADDR_SPACE-1:0]+3])
+                        );
 
 
+
+        
+    end
 end
 endtask
 
 
 
 
-task load_Q2SPAD;
+task load_Q2SPAD_16x16;
     begin
+
         fork 
             begin
-                for(integer Q_COL_by_4 = 0; Q_COL_by_4 < (Q_Width<<2); Q_COL_by_4 = Q_COL_by_4 + 'd1)begin
-                    spad_write('d0, )
-
-                end
+                spad_write_wrap(.port_idx('d0),     .addr('d0),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 0 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d1),     .addr('d2),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 1 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d2),     .addr('d4),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 2 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d3),     .addr('d6),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 3 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d4),     .addr('d8),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 4 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d5),     .addr('d10),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 5 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d6),     .addr('d11),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 6 transfer");
+            end
+            begin
+                spad_write_wrap(.port_idx('d7),     .addr('d12),
+                                .sub_bank_id('d0),  .length('d8));
+                $display("LOAD Q: Finish port 7 transfer");
             end
         join
 
-
-
-        $readmemh(Q_HEX_FILENAME, Q_matrix_gt);
-        $$display("Load Q_gth");
-        $readmemh(K_HEX_FILENAME, K_matrix_gt);
-        $$display("Load K_gth");
-        $readmemh(V_HEX_FILENAME, V_matrix_gt);
-        $$display("Load V_gth");
     end
 endtask
-
 
 
 
@@ -412,46 +513,20 @@ endtask
 // Write one row to ScratchPad (single cycle, port 0, subBankIdx=0)
 task spad_write;
 input [31:0] port_idx;
+input  in_valid;
 input [1:0]  input_SubBankID;
-input [4:0]  addr;
+input [6:0]  addr;
 input [15:0] d0, d1, d2, d3;
 begin
 
-    io_spad_write_valid_reg[port_idx]           = 'd1;
+    io_spad_write_valid_reg[port_idx]           = in_valid;
     io_spad_write_addr[port_idx]                = addr;
     io_spad_write_subBankIdx_reg[port_idx]      = input_SubBankID;
     io_spad_write_data_0_reg[port_idx]          = d0;
     io_spad_write_data_1_reg[port_idx]          = d1;
     io_spad_write_data_2_reg[port_idx]          = d2;
     io_spad_write_data_3_reg[port_idx]          = d3;
-
-
-    if (port_idx=='d0)begin
-        io_spad_write_0_valid =	'd1;
-        io_spad_write_0_addr  = addr;
-        io_spad_write_0_subBankIdx = input_SubBankID;
-        io_spad_write_0_data_0 = d0;	
-        io_spad_write_0_data_1 = d1;
-        io_spad_write_0_data_2 = d2;
-        io_spad_write_0_data_3 = d3;
-    end
-    else begin
-
-    end
-
-
-
-
-
-
-    idle_all();
-    spad_wr0_v    = 1;
-    spad_wr0_addr = addr;
-    spad_wr0_sbi  = 0;
-    spad_wr0_d0   = d0; spad_wr0_d1 = d1;
-    spad_wr0_d2   = d2; spad_wr0_d3 = d3;
-    tick;
-    idle_all();
+    @(posedge clock);
 end
 endtask
 
