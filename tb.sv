@@ -1,10 +1,10 @@
 `timescale 1ns/1ps
-`include "golden_ans/ga_txt.vh"
+//`include "golden_ans/ga_txt.vh"
 
 
 
 // PATTERN
-`include "PATTERN_CG.sv"
+`include "PATTERN.sv"
 
 
 // DESIGN
@@ -21,24 +21,13 @@
 `define STOP_COND_ 1'b0
 `define ASSERT_VERBOSE_COND_ 1'b0
 
-module tb_L16_fsa (
+module tb_L16_fsa;
     
-
-
-	wire clk, reset;
-
-
-
-	wire [7:0] img;
-	wire [7:0] ker;
-	wire [7:0] weight;
-	wire out_valid;
-	wire [9:0] out_data;	
 
     initial begin
         `ifdef RTL
             $fsdbDumpfile("FSA_16x16.fsdb");
-            $fsdbDumpvars(0,"+mda");
+            $fsdbDumpvars(0,"tb_L16_fsa","+mda");
         `elsif GATE
             $fsdbDumpfile("FSA_16x16_SYN.fsdb");
             $fsdbDumpvars(0,"+mda");
@@ -47,34 +36,33 @@ module tb_L16_fsa (
     end
 
     // Global Signals
-    wire clock;
-    wire reset;
-    wire tb_io_busy;
+    logic clock;
+    logic reset;
+    logic tb_io_busy;
 
     // io_inst Signals
-    wire        tb_inst_valid;
-    wire        tb_inst_ready;
-    wire [4:0]  tb_inst_bits_acc_addr;
-    wire [4:0]  tb_inst_bits_acc_stride;
-    wire        tb_inst_bits_acc_zero;
-    wire [6:0]  tb_inst_bits_spad_addr;
-    wire [4:0]  tb_inst_bits_spad_stride;
-    wire        tb_inst_bits_spad_revInput;
-    wire        tb_inst_bits_spad_revOutput;
-    wire        tb_inst_bits_spad_delayOutput;
-    wire [4:0]  tb_inst_bits_header_semId;
-    wire        tb_inst_bits_header_releaseValid;
-    wire [2:0]  tb_inst_bits_header_releaseSemValue;
-    wire [4:0]  tb_inst_bits_header_func;
-    wire        tb_inst_bits_header_waitPrevAcc;
+    logic        tb_inst_valid;
+    logic        tb_inst_ready;
+    logic [4:0]  tb_inst_bits_acc_addr;
+    logic [4:0]  tb_inst_bits_acc_stride;
+    logic        tb_inst_bits_acc_zero;
+    logic [6:0]  tb_inst_bits_spad_addr;
+    logic [4:0]  tb_inst_bits_spad_stride;
+    logic        tb_inst_bits_spad_revInput;
+    logic        tb_inst_bits_spad_revOutput;
+    logic        tb_inst_bits_spad_delayOutput;
+    logic [4:0]  tb_inst_bits_header_semId;
+    logic        tb_inst_bits_header_releaseValid;
+    logic [2:0]  tb_inst_bits_header_releaseSemValue;
+    logic [4:0]  tb_inst_bits_header_func;
+    logic        tb_inst_bits_header_waitPrevAcc;
 
     // io_sem Signals
     wire        tb_sem_release_valid;
     wire [4:0]  tb_sem_release_bits_id;
     wire [2:0]  tb_sem_release_bits_value;
 
-    // SPAD Write Ports (用 Loop 概念思考，但 Verilog 宣告需展開)
-    // 以 io_spad_write_0 為例，其餘類推
+
     wire        tb_spad_write_0_valid, tb_spad_write_0_ready;
     wire [6:0]  tb_spad_write_0_addr;
     wire [1:0]  tb_spad_write_0_subBankIdx;
@@ -136,6 +124,14 @@ module tb_L16_fsa (
     wire [1:0]  tb_spad_write_7_subBankIdx;
     wire [15:0] tb_spad_write_7_data_0, tb_spad_write_7_data_1, tb_spad_write_7_data_2, tb_spad_write_7_data_3;
     //*************************************************************************************************
+
+    //---------------------------------------------------------
+    // ACC Read Channel 0
+    //---------------------------------------------------------
+    wire        tb_acc_read_0_valid, tb_acc_read_0_ready;
+    wire [4:0]  tb_acc_read_0_addr;
+    wire [2:0]  tb_acc_read_0_subBankIdx;
+    wire [31:0] tb_acc_read_0_data_0, tb_acc_read_0_data_1;
 
 
     //---------------------------------------------------------
@@ -231,7 +227,7 @@ module tb_L16_fsa (
         .io_spad_write_0_addr(tb_spad_write_0_addr),
         .io_spad_write_0_subBankIdx(tb_spad_write_0_subBankIdx),
         .io_spad_write_0_data_0(tb_spad_write_0_data_0), .io_spad_write_0_data_1(tb_spad_write_0_data_1), .io_spad_write_0_data_2(tb_spad_write_0_data_2), .io_spad_write_0_data_3(tb_spad_write_0_data_3),
-        .io_spad_write_0_ready(tb_spad_write_0_ready),
+        //.io_spad_write_0_ready(tb_spad_write_0_ready),
         //-------------------------------------------------
         // io_spad_write_1
         .io_spad_write_1_valid(tb_spad_write_1_valid),
@@ -266,7 +262,7 @@ module tb_L16_fsa (
         //-------------------------------------------------
         .io_spad_write_6_valid(tb_spad_write_6_valid),
         .io_spad_write_6_addr(tb_spad_write_6_addr),
-        .io_spad_write_6_subBankIdx(tb_spad_write_6_subBankIdx),'
+        .io_spad_write_6_subBankIdx(tb_spad_write_6_subBankIdx),
         .io_spad_write_6_data_0(tb_spad_write_6_data_0), .io_spad_write_6_data_1(tb_spad_write_6_data_1), .io_spad_write_6_data_2(tb_spad_write_6_data_2), .io_spad_write_6_data_3(tb_spad_write_6_data_3),
         .io_spad_write_6_ready(tb_spad_write_6_ready),
         //-------------------------------------------------
@@ -364,7 +360,7 @@ module tb_L16_fsa (
         .io_spad_write_0_addr(tb_spad_write_0_addr),
         .io_spad_write_0_subBankIdx(tb_spad_write_0_subBankIdx),
         .io_spad_write_0_data_0(tb_spad_write_0_data_0), .io_spad_write_0_data_1(tb_spad_write_0_data_1), .io_spad_write_0_data_2(tb_spad_write_0_data_2), .io_spad_write_0_data_3(tb_spad_write_0_data_3),
-        .io_spad_write_0_ready(tb_spad_write_0_ready),
+        //.io_spad_write_0_ready(tb_spad_write_0_ready),
         //-------------------------------------------------
         // io_spad_write_1
         .io_spad_write_1_valid(tb_spad_write_1_valid),
@@ -399,7 +395,7 @@ module tb_L16_fsa (
         //-------------------------------------------------
         .io_spad_write_6_valid(tb_spad_write_6_valid),
         .io_spad_write_6_addr(tb_spad_write_6_addr),
-        .io_spad_write_6_subBankIdx(tb_spad_write_6_subBankIdx),'
+        .io_spad_write_6_subBankIdx(tb_spad_write_6_subBankIdx),
         .io_spad_write_6_data_0(tb_spad_write_6_data_0), .io_spad_write_6_data_1(tb_spad_write_6_data_1), .io_spad_write_6_data_2(tb_spad_write_6_data_2), .io_spad_write_6_data_3(tb_spad_write_6_data_3),
         .io_spad_write_6_ready(tb_spad_write_6_ready),
         //-------------------------------------------------
@@ -455,7 +451,7 @@ module tb_L16_fsa (
     );
 
 
-);
+
     
 endmodule
 

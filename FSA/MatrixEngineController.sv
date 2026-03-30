@@ -861,11 +861,11 @@ module MatrixEngineController(
       REG_39 <= REG_38;	
       REG_40 <= ~(|_io_pe_ctrl_15_valid_T) | ({_fsm_list_0_io_pe_ctrl_15_bits_mac, _fsm_list_0_io_pe_ctrl_15_bits_acc_ui, _fsm_list_0_io_pe_ctrl_15_bits_load_reg_li, _fsm_list_0_io_pe_ctrl_15_bits_load_reg_ui, _fsm_list_0_io_pe_ctrl_15_bits_flow_lr, _fsm_list_0_io_pe_ctrl_15_bits_flow_ud, _fsm_list_0_io_pe_ctrl_15_bits_flow_du, _fsm_list_0_io_pe_ctrl_15_bits_update_reg, _fsm_list_0_io_pe_ctrl_15_bits_exp2} & {_fsm_list_1_io_pe_ctrl_15_bits_mac, _fsm_list_1_io_pe_ctrl_15_bits_acc_ui, _fsm_list_1_io_pe_ctrl_15_bits_load_reg_li, _fsm_list_1_io_pe_ctrl_15_bits_load_reg_ui, _fsm_list_1_io_pe_ctrl_15_bits_flow_lr, _fsm_list_1_io_pe_ctrl_15_bits_flow_ud, _fsm_list_1_io_pe_ctrl_15_bits_flow_du, _fsm_list_1_io_pe_ctrl_15_bits_update_reg, _fsm_list_1_io_pe_ctrl_15_bits_exp2}) == 9'h0;	
       REG_41 <= REG_40;	
-      if (io_in_ready_0 & io_in_valid)	
+      if (io_in_ready_0 & io_in_valid)
         enq_ptr <= _deq_ptr_T;	
     end
   end // always @(posedge)
-  
+
   MatrixControlFSM fsm_list_0 (	
     .clock                             (clock),
     .reset                             (reset),
