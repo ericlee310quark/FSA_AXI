@@ -316,6 +316,9 @@ assign io_spad_write_ready_wires = {io_spad_write_7_ready, io_spad_write_6_ready
 //================================================================
 //    initial
 //================================================================
+
+integer inst_5_lat;
+
 initial begin
 
     load_hex_QKV;
@@ -332,7 +335,28 @@ initial begin
     end
     load_2_SPAD_16x16(INPUT_M_K);
     inst_2;
-    repeat(500)begin
+    
+    repeat(200)begin
+        @(negedge clock);
+    end
+    load_2_SPAD_16x16(INPUT_M_V);
+    inst_3;
+    
+    inst_4;
+    inst_5;
+    inst_5_lat = 0;
+    while(io_inst_ready==='d0)begin
+        @(negedge clock);
+        inst_5_lat =    inst_5_lat + 1;
+        if (inst_5_lat > 'd500)begin
+            $display("Inst_5 wait too long!!! %d cyc", inst_5_lat);
+            $finish;
+        end
+    end
+    $display("Inst_5 use %d cyc", inst_5_lat);
+
+    READ_ACC_16x16;
+    repeat(50)begin
         @(negedge clock);
     end
     // TODO:
@@ -824,13 +848,121 @@ input integer matrix_choice;
 
         endcase
     end
+endtask
+//******************************************************************************************************
+
+// Write one row to ScratchPad (single cycle, port 0, subBankIdx=0)
+task automatic acc_sram_write;
+input [31:0]    port_idx;
+input           read_valid;
+input [2:0]     read_SubBankID;
+input [4:0]     addr;
+begin
 
 
-
-
-
+    io_acc_read_valid_reg[port_idx]             =   read_valid;
+    io_acc_read_addr_reg[port_idx]              =   addr;
+    io_acc_read_subBankIdx_reg[port_idx]        =   read_SubBankID;
+    $display("---------------------------------------");
+    $display("ACC READ: Port %d",port_idx);
+    $display("read_valid: %d",read_valid);
+    $display("read_SubBankID: %d", read_SubBankID);
+    $display("Addr: %d", addr);
+    $display("Total cyc: %d", tot_cyc);
+    $display("---------------------------------------");
+    tick;
+end
 endtask
 
+
+
+
+
+//MAX LENGTH 16x16
+task automatic  acc_sram_read_wrap;
+input [31:0] port_idx;
+input [4:0] addr;
+input [2:0] sub_bank_id;
+input integer length;
+begin
+    integer addr_idx = 0;
+    integer acc_read_latency = 0;
+    reg [7:0] temp_total_addr;
+    reg [7:0] txt_file_addr;
+    temp_total_addr = {addr, sub_bank_id};
+
+
+    for(integer curr_idx=0; curr_idx < (length); curr_idx = curr_idx + 'd1)begin
+
+        acc_sram_write(.port_idx(port_idx), .read_valid('d1), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));
+        if (curr_idx=='d9)begin
+            temp_total_addr = temp_total_addr + 1;
+            acc_sram_write(.port_idx(port_idx), .read_valid('d0), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));                
+            //temp_total_addr = temp_total_addr + 1;
+        
+        end
+        else begin
+            temp_total_addr = temp_total_addr + 1;
+        end
+    end
+
+    acc_sram_write(.port_idx(port_idx), .read_valid('d0), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));
+    $display("ACC read inst finish: Port %0d",port_idx);
+
+end
+endtask
+
+
+
+
+
+task READ_ACC_16x16;
+    begin
+        fork
+            begin
+                acc_sram_read_wrap(.port_idx('d0), .addr('h1), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 0 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d1), .addr('h3), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 1 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d2), .addr('h5), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 2 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d3), .addr('h7), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 3 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d4), .addr('h9), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 4 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d5), .addr('hb), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 5 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d6), .addr('hd), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 6 inst");
+            end
+            begin
+                acc_sram_read_wrap(.port_idx('d7), .addr('hf), .sub_bank_id('h0), .length('d16));
+                $display("ACC READ: Finish port 7 inst");
+            end
+        join
+    end
+endtask
+
+
+
+
+
+
+
+
+//******************************************************************************************************
 
 integer inst_1_start_cyc;
 integer inst_1_lat_cyc;
@@ -969,23 +1101,69 @@ begin
             $finish;
         end
     end
-
-    //io_inst_valid                           =   'h0;
-    //io_inst_bits_acc_addr                   =   'h0;
-    //io_inst_bits_acc_stride                 =   'h0;
-    //io_inst_bits_acc_zero                   =   'h0;
-    //io_inst_bits_spad_addr                  =   'h0;
-    //io_inst_bits_spad_stride                =   'h0;
-    //io_inst_bits_spad_revInput              =   'h0;
-    //io_inst_bits_spad_revOutput             =   'h0;
-    //io_inst_bits_spad_delayOutput           =   'h0;
-    //io_inst_bits_header_semId               =   'h0;
-    //io_inst_bits_header_releaseValid        =   'h0;
-    //io_inst_bits_header_releaseSemValue     =   'h0;
-    //io_inst_bits_header_func                =   'h0;
-    //io_inst_bits_header_waitPrevAcc         =	'h0;
+end
+endtask
 
 
+integer inst_3_start_cyc;
+integer inst_3_lat_cyc;
+task   inst_3;
+begin
+   @(negedge clock);
+    io_inst_valid                           =   'h1;
+    io_inst_bits_acc_addr                   =   'h1;
+    io_inst_bits_acc_stride                 =   'h1;
+    io_inst_bits_acc_zero                   =   'h1;
+
+    io_inst_bits_spad_addr                  =   'h40;
+    io_inst_bits_spad_stride                =   'h1;
+    io_inst_bits_spad_revInput              =   'h1;
+    io_inst_bits_spad_revOutput             =   'h0;
+    io_inst_bits_spad_delayOutput           =   'h1;
+
+    io_inst_bits_header_semId               =   'h4;
+    io_inst_bits_header_releaseValid        =   'h1;
+    io_inst_bits_header_releaseSemValue     =   'h0;
+    io_inst_bits_header_func                =   'h2;
+    io_inst_bits_header_waitPrevAcc         =	'h0;
+    inst_3_start_cyc = 0;
+    //@(posedge clock); 
+    while(io_inst_ready!=='d1)begin
+        inst_3_start_cyc = inst_3_start_cyc + 1;
+        if (inst_3_start_cyc > 'd500)begin
+            $display("Inst_3 wait too long!!!");
+            $finish;
+        end
+        @(negedge clock);      
+    end
+    @(negedge clock);
+    io_inst_valid                           =   'h0;
+    io_inst_bits_acc_addr                   =   'h1d;
+    io_inst_bits_acc_stride                 =   'h5;
+    io_inst_bits_acc_zero                   =   'h1;
+
+    io_inst_bits_spad_addr                  =   'h5a;
+    io_inst_bits_spad_stride                =   'h1a;
+    io_inst_bits_spad_revInput              =   'h1;
+    io_inst_bits_spad_revOutput             =   'h1;
+    io_inst_bits_spad_delayOutput           =   'h0;
+    
+    io_inst_bits_header_semId               =   'h15;
+    io_inst_bits_header_releaseValid        =   'h1;
+    io_inst_bits_header_releaseSemValue     =   'h7;
+    io_inst_bits_header_func                =   'h1d;
+    io_inst_bits_header_waitPrevAcc         =	'h0;
+   
+    @(negedge clock);
+    inst_3_lat_cyc = 0;
+    while(io_busy!=='d0)begin
+        @(negedge clock);
+        inst_3_lat_cyc = inst_3_lat_cyc +1;
+        if (inst_3_lat_cyc > 'd500)begin
+            $display("Inst_3 lat too long!!!");
+            $finish;
+        end
+    end
 end
 endtask
 
@@ -993,10 +1171,130 @@ endtask
 
 
 
+integer inst_4_start_cyc;
+integer inst_4_lat_cyc;
+task   inst_4;
+begin
+   @(negedge clock);
+    io_inst_valid                           =   'h1;
+    io_inst_bits_acc_addr                   =   'h0;
+    io_inst_bits_acc_stride                 =   'h1;
+    io_inst_bits_acc_zero                   =   'h0;
+
+    io_inst_bits_spad_addr                  =   'h0;
+    io_inst_bits_spad_stride                =   'h0;
+    io_inst_bits_spad_revInput              =   'h0;
+    io_inst_bits_spad_revOutput             =   'h0;
+    io_inst_bits_spad_delayOutput           =   'h0;
+
+    io_inst_bits_header_semId               =   'h0;
+    io_inst_bits_header_releaseValid        =   'h0;
+    io_inst_bits_header_releaseSemValue     =   'h0;
+    io_inst_bits_header_func                =   'h3;
+    io_inst_bits_header_waitPrevAcc         =	'h1;
+    inst_4_start_cyc = 0;
+    //@(posedge clock); 
+    while(io_inst_ready!=='d1)begin
+        inst_4_start_cyc = inst_4_start_cyc + 1;
+        if (inst_4_start_cyc > 'd500)begin
+            $display("Inst_4 wait too long!!!");
+            $finish;
+        end
+        @(negedge clock);      
+    end
+    @(negedge clock);
+    io_inst_valid                           =   'h0;
+    io_inst_bits_acc_addr                   =   'h1;
+    io_inst_bits_acc_stride                 =   'hd;
+    io_inst_bits_acc_zero                   =   'h1;
+
+    io_inst_bits_spad_addr                  =   'h43;
+    io_inst_bits_spad_stride                =   'h0;
+    io_inst_bits_spad_revInput              =   'h1;
+    io_inst_bits_spad_revOutput             =   'h1;
+    io_inst_bits_spad_delayOutput           =   'h1;
+    
+    io_inst_bits_header_semId               =   'h1;
+    io_inst_bits_header_releaseValid        =   'h1;
+    io_inst_bits_header_releaseSemValue     =   'h7;
+    io_inst_bits_header_func                =   'h18;
+    io_inst_bits_header_waitPrevAcc         =	'h1;
+   
+    @(negedge clock);
+    inst_4_lat_cyc = 0;
+    while(io_busy!=='d0)begin
+        @(negedge clock);
+        inst_4_lat_cyc = inst_4_lat_cyc +1;
+        if (inst_4_lat_cyc > 'd500)begin
+            $display("Inst_4 lat too long!!!");
+            $finish;
+        end
+    end
+end
+endtask
 
 
+integer inst_5_start_cyc;
+integer inst_5_lat_cyc;
+task   inst_5;
+begin
+   @(negedge clock);
+    io_inst_valid                           =   'h1;
+    io_inst_bits_acc_addr                   =   'h1;
+    io_inst_bits_acc_stride                 =   'h1;
+    io_inst_bits_acc_zero                   =   'h0;
 
+    io_inst_bits_spad_addr                  =   'h0;
+    io_inst_bits_spad_stride                =   'h0;
+    io_inst_bits_spad_revInput              =   'h0;
+    io_inst_bits_spad_revOutput             =   'h0;
+    io_inst_bits_spad_delayOutput           =   'h0;
 
+    io_inst_bits_header_semId               =   'h6;
+    io_inst_bits_header_releaseValid        =   'h1;
+    io_inst_bits_header_releaseSemValue     =   'h1;
+    io_inst_bits_header_func                =   'h4;
+    io_inst_bits_header_waitPrevAcc         =	'h1;
+    inst_5_start_cyc = 0;
+    //@(posedge clock); 
+    while(io_inst_ready!=='d1)begin
+        inst_5_start_cyc = inst_5_start_cyc + 1;
+        if (inst_5_start_cyc > 'd500)begin
+            $display("Inst_5 wait too long!!!");
+            $finish;
+        end
+        @(negedge clock);      
+    end
+    @(negedge clock);
+    io_inst_valid                           =   'h0;
+    io_inst_bits_acc_addr                   =   'hf;
+    io_inst_bits_acc_stride                 =   'hf;
+    io_inst_bits_acc_zero                   =   'h0;
+
+    io_inst_bits_spad_addr                  =   'h3d;
+    io_inst_bits_spad_stride                =   'h11;
+    io_inst_bits_spad_revInput              =   'h0;
+    io_inst_bits_spad_revOutput             =   'h0;
+    io_inst_bits_spad_delayOutput           =   'h0;
+    
+    io_inst_bits_header_semId               =   'hd;
+    io_inst_bits_header_releaseValid        =   'h0;
+    io_inst_bits_header_releaseSemValue     =   'h3;
+    io_inst_bits_header_func                =   'h9;
+    io_inst_bits_header_waitPrevAcc         =	'h1;
+   
+    @(negedge clock);
+    inst_5_lat_cyc = 0;
+    while(io_busy!=='d0)begin
+        @(negedge clock);
+        inst_5_lat_cyc = inst_5_lat_cyc +1;
+        if (inst_5_lat_cyc > 'd500)begin
+            $display("Inst_5 lat too long!!!");
+            $finish;
+        end
+    end
+end
+endtask
 
 
 
