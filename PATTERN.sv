@@ -9,7 +9,9 @@
 module PATTERN(
         output reg          clock,	
         output reg          reset,	
+
         input        io_inst_ready,	
+
         output reg          io_inst_valid,	
         output reg   [4:0]  io_inst_bits_acc_addr,	
         output reg   [4:0]  io_inst_bits_acc_stride,	
@@ -27,6 +29,7 @@ module PATTERN(
         input        io_sem_release_valid,	
         input [4:0]  io_sem_release_bits_id,	
         input [2:0]  io_sem_release_bits_value,	
+
         output reg          io_spad_write_0_valid,	
         output reg   [6:0]  io_spad_write_0_addr,	
         output reg   [1:0]  io_spad_write_0_subBankIdx,	
@@ -89,7 +92,8 @@ module PATTERN(
         output reg   [15:0] io_spad_write_7_data_0,	
         output reg   [15:0] io_spad_write_7_data_1,	
         output reg   [15:0] io_spad_write_7_data_2,	
-        output reg   [15:0] io_spad_write_7_data_3,	
+        output reg   [15:0] io_spad_write_7_data_3,
+
         output reg          io_acc_read_0_valid,	
         output reg   [4:0]  io_acc_read_0_addr,	
         input        io_acc_read_0_ready,	
@@ -138,6 +142,7 @@ module PATTERN(
         output reg   [2:0]  io_acc_read_7_subBankIdx,	
         input [31:0] io_acc_read_7_data_0,	
         input [31:0] io_acc_read_7_data_1,	
+        
         input        io_busy	
 );
 
@@ -340,6 +345,9 @@ initial begin
         @(negedge clock);
     end
     load_2_SPAD_16x16(INPUT_M_V);
+    repeat(50)begin
+        @(negedge clock);
+    end
     inst_3;
     
     inst_4;

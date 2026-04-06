@@ -553,13 +553,24 @@ module FSA(
   reg  [4:0]      sram_accRAM_fullWrite_0_addr_REG;	
   wire            _spConstSel_T_1 = _mxControl_io_sp_read_valid & _mxControl_io_sp_read_bits_is_constant;	
   wire z_test;
-  assign z_test = REG_8;
+
   always @(posedge clock) begin	
     if (reset) begin	
       exp2PwlCounter_value <= 3'h0;	
       REG_8 <= 1'h0;	
       inputDelayer_io_in_valid_REG <= 1'h0;	
       sram_accRAM_fullWrite_0_valid_REG <= 1'h0;	
+      //*MODIFY
+      inputDelayer_io_in_bits_rev_input_REG <= 'd0;
+      inputDelayer_io_in_bits_delay_output_REG <= 'd0;
+      inputDelayer_io_in_bits_rev_output_REG <= 'd0;
+      sram_accRAM_fullWrite_0_addr_REG <= 'd0;
+      spConstSel <='d0;
+      REG_9<='d0;
+      REG_10 <= 'd0;
+      //*
+
+
     end
     else begin	
       if (REG_8)	
@@ -777,6 +788,7 @@ module FSA(
   );	
   InputDelayer inputDelayer (	
     .clock                       (clock),
+    .reset                        (reset),
     .io_in_valid                 (inputDelayer_io_in_valid_REG),	
     .io_in_bits_data_0_sign      (~REG_9 & _spRAM_sram_io_fullRead_0_data_0[15]),	
     .io_in_bits_data_0_exp       (REG_9 ? _GEN_4 : _spRAM_sram_io_fullRead_0_data_0[14:10]),	
