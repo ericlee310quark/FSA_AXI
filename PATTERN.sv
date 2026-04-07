@@ -269,10 +269,12 @@ parameter SPAD_CHANNEL_SPACE = 3;
 parameter Q_Width = 16, Q_Height = 16;
 parameter K_Width = 16, K_Height = 16;
 parameter V_Width = 16, V_Height = 16;
+parameter NORM_O_Width = 16, NORM_O_Height = 16;
 
 parameter Q_bandwith = 16;
 parameter K_bandwith = 16;
 parameter V_bandwith = 16;
+parameter NORM_O_bandwith = 32;
 
 parameter INPUT_M_Q = 0, INPUT_M_K = 1, INPUT_M_V = 2;
 
@@ -285,13 +287,19 @@ integer tot_cyc = 0;
 `define Q_HEX_FILENAME "Q.hex"
 `define K_HEX_FILENAME "K.hex"
 `define V_HEX_FILENAME "V.hex"
+`define NORM_O_HEX_FILENAME "NORM_O.hex"
 
 //-------------------------------------
 // Golden Truth Use
 //-------------------------------------
 reg  [Q_bandwith-1:0] Q_matrix_gt [Q_Height*Q_Width-1:0];
 reg  [K_bandwith-1:0] K_matrix_gt [K_Height*K_Width-1:0];
-reg  [V_bandwith-1:0] V_matrix_gt [V_Height*V_Width-1:0];
+reg  [V_bandwith-1:0] V_matrix_gt [V_Height*V_Width-1:0]; //Store in Tr format
+
+
+
+reg  [NORM_O_bandwith-1:0] NORM_O_matrix_gt [NORM_O_Height*NORM_O_Width*4-1:0]; //Store in Tr format (Postiton-4096)
+
 
 //! There is no  `io_spand_write_0_ready` signal.
 //================================================================
@@ -313,7 +321,8 @@ wire io_spad_write_ready_wires[SPAD_CHANNEL_NUM-1:0];
 wire io_acc_read_ready_wires[SPAD_CHANNEL_NUM-1:0];
 
 
-
+reg [31:0] io_acc_read_data_0_reg [7:0];
+reg [31:0] io_acc_read_data_1_reg [7:0];
 
 
 assign io_spad_write_ready_wires = {io_spad_write_7_ready, io_spad_write_6_ready, io_spad_write_5_ready, io_spad_write_4_ready, io_spad_write_3_ready, io_spad_write_2_ready, io_spad_write_1_ready, 1'b1};
@@ -333,23 +342,20 @@ initial begin
     //reset_signal;
     //idle_all;
     load_2_SPAD_16x16(INPUT_M_Q);
-    repeat(50)begin
-        @(negedge clock);
-    end
+    //repeat(50)begin
+    //    @(negedge clock);
+    //end
     inst_1;
-    repeat(50)begin
-        @(negedge clock);
-    end
+    //repeat(50)begin
+    //    @(negedge clock);
+    //end
     load_2_SPAD_16x16(INPUT_M_K);
     inst_2;
     
-    repeat(200)begin
-        @(negedge clock);
-    end
+    //repeat(200)begin
+    //    @(negedge clock);
+    //end
     load_2_SPAD_16x16(INPUT_M_V);
-    repeat(50)begin
-        @(negedge clock);
-    end
     inst_3;
     
     inst_4;
@@ -364,7 +370,7 @@ initial begin
         end
     end
     $display("Inst_5 use %d cyc", inst_5_lat);
-    repeat(50)begin
+    repeat(1)begin
         @(negedge clock);
     end
     READ_ACC_16x16;
@@ -500,7 +506,9 @@ task load_hex_QKV;
         $readmemh(`V_HEX_FILENAME, V_matrix_gt);
         $display("Load V_gth");
 
-
+        $readmemh(`NORM_O_HEX_FILENAME, NORM_O_matrix_gt);
+        //$readmemh(`NORM_O_HEX_FILENAME, NORM_O_matrix_gt,4096);
+        $display("Load NORM_O_gth");
 
     end
 endtask
@@ -884,6 +892,23 @@ begin
     $display("Total cyc: %d", tot_cyc);
     $display("---------------------------------------");
     tick;
+
+    if (io_acc_read_ready_wires[port_idx] === 'd1 & io_acc_read_valid_reg[port_idx] === 'd1 )begin
+        $display("ACC READ @%h %h", addr,read_SubBankID);
+        $display("ACC READ channel 0: Port %d: %h", port_idx, io_acc_read_data_0_reg[port_idx]);
+        $display("ACC READ channel 1: Port %d: %h", port_idx, io_acc_read_data_1_reg[port_idx]);
+
+        if(io_acc_read_data_0_reg[port_idx] !== NORM_O_matrix_gt[{addr, read_SubBankID, 1'b0} - 'd16])begin
+            $display("ACC READ channel 0 mismatch: %h @%d", NORM_O_matrix_gt[{addr, read_SubBankID, 1'b0} - 'd16], {addr, read_SubBankID, 1'b1} - 'd4096);
+            $finish;
+        end
+        if(io_acc_read_data_1_reg[port_idx] !== NORM_O_matrix_gt[{addr, read_SubBankID, 1'b1} - 'd16])begin
+            $display("ACC READ channel 1 mismatch: %h @%d", NORM_O_matrix_gt[{addr, read_SubBankID, 1'b1} - 'd16], {addr, read_SubBankID, 1'b1} - 'd4096);
+            $finish;
+        end
+    
+    end
+
 end
 endtask
 
@@ -922,6 +947,10 @@ begin
         end
         acc_lat = 0;
         
+        
+
+
+
         if (curr_idx=='d9)begin
             temp_total_addr = temp_total_addr + 1;
             acc_sram_write(.port_idx(port_idx), .read_valid('d0), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));                
@@ -948,6 +977,7 @@ task READ_ACC_16x16;
         fork
             begin
                 acc_sram_read_wrap(.port_idx('d0), .addr('h1), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_0_ready));
+                
                 $display("ACC READ: Finish port 0 inst");
             end
             begin
@@ -978,6 +1008,17 @@ task READ_ACC_16x16;
                 acc_sram_read_wrap(.port_idx('d7), .addr('hf), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_7_ready));
                 $display("ACC READ: Finish port 7 inst");
             end
+
+            //begin
+            //    for(integer acc_port_idx = 0; acc_port_idx < 8 ; acc_port_idx = acc_port_idx +1)begin
+            //        if (io_acc_read_ready_wires[acc_port_idx] === 'd1 & io_acc_read_valid_reg[acc_port_idx] === 'd1 )begin
+            //            $display("ACC READ @%h %h", io_acc_read_addr_reg[acc_port_idx] ,io_acc_read_subBankIdx_reg[acc_port_idx]);
+            //            $display("ACC READ channel 0: Port %d: %h", acc_port_idx, io_acc_read_data_0_reg[acc_port_idx]);
+            //            $display("ACC READ channel 1: Port %d: %h", acc_port_idx, io_acc_read_data_0_reg[acc_port_idx]);
+            //
+            //        end
+            //    end
+            //end
         join
     end
 endtask
@@ -1416,6 +1457,23 @@ assign io_acc_read_7_valid =        io_acc_read_valid_reg[7];
 assign io_acc_read_7_addr =         io_acc_read_addr_reg[7];
 assign io_acc_read_7_subBankIdx =   io_acc_read_subBankIdx_reg[7];
 
+
+assign io_acc_read_data_0_reg [0] = io_acc_read_0_data_0;
+assign io_acc_read_data_1_reg [0] = io_acc_read_0_data_1;
+assign io_acc_read_data_0_reg [1] = io_acc_read_1_data_0;
+assign io_acc_read_data_1_reg [1] = io_acc_read_1_data_1;
+assign io_acc_read_data_0_reg [2] = io_acc_read_2_data_0;
+assign io_acc_read_data_1_reg [2] = io_acc_read_2_data_1;
+assign io_acc_read_data_0_reg [3] = io_acc_read_3_data_0;
+assign io_acc_read_data_1_reg [3] = io_acc_read_3_data_1;
+assign io_acc_read_data_0_reg [4] = io_acc_read_4_data_0;
+assign io_acc_read_data_1_reg [4] = io_acc_read_4_data_1;
+assign io_acc_read_data_0_reg [5] = io_acc_read_5_data_0;
+assign io_acc_read_data_1_reg [5] = io_acc_read_5_data_1;
+assign io_acc_read_data_0_reg [6] = io_acc_read_6_data_0;
+assign io_acc_read_data_1_reg [6] = io_acc_read_6_data_1;
+assign io_acc_read_data_0_reg [7] = io_acc_read_7_data_0;
+assign io_acc_read_data_1_reg [7] = io_acc_read_7_data_1;
 
 
 endmodule
