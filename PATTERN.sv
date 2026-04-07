@@ -310,12 +310,14 @@ reg  [4:0] io_acc_read_addr_reg         [7:0];
 reg  [2:0] io_acc_read_subBankIdx_reg   [7:0];
 
 wire io_spad_write_ready_wires[SPAD_CHANNEL_NUM-1:0];
+wire io_acc_read_ready_wires[SPAD_CHANNEL_NUM-1:0];
 
 
 
 
 
 assign io_spad_write_ready_wires = {io_spad_write_7_ready, io_spad_write_6_ready, io_spad_write_5_ready, io_spad_write_4_ready, io_spad_write_3_ready, io_spad_write_2_ready, io_spad_write_1_ready, 1'b1};
+assign io_acc_read_ready_wires = {io_acc_read_7_ready, io_acc_read_6_ready, io_acc_read_5_ready, io_acc_read_4_ready, io_acc_read_3_ready, io_acc_read_2_ready, io_acc_read_1_ready, io_acc_read_0_ready};
 
 
 //================================================================
@@ -362,7 +364,9 @@ initial begin
         end
     end
     $display("Inst_5 use %d cyc", inst_5_lat);
-
+    repeat(50)begin
+        @(negedge clock);
+    end
     READ_ACC_16x16;
     repeat(50)begin
         @(negedge clock);
@@ -472,12 +476,13 @@ endtask
 task reset_idle_all;
     begin
         reset=1;
-        repeat(100)begin
-            @(negedge clock);
-        end
         idle_inst;
         idle_spad;
         idle_acc;
+        repeat(100)begin
+            @(negedge clock);
+        end
+
         repeat(10)begin
             @(negedge clock);
         end
@@ -887,22 +892,36 @@ endtask
 
 
 //MAX LENGTH 16x16
+
+
 task automatic  acc_sram_read_wrap;
 input [31:0] port_idx;
 input [4:0] addr;
 input [2:0] sub_bank_id;
+input  io_acc_read_ready;
 input integer length;
 begin
     integer addr_idx = 0;
     integer acc_read_latency = 0;
     reg [7:0] temp_total_addr;
     reg [7:0] txt_file_addr;
+    integer acc_lat = 0;
     temp_total_addr = {addr, sub_bank_id};
-
 
     for(integer curr_idx=0; curr_idx < (length); curr_idx = curr_idx + 'd1)begin
 
         acc_sram_write(.port_idx(port_idx), .read_valid('d1), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));
+        while(~io_acc_read_ready_wires[port_idx[SPAD_CHANNEL_SPACE-1:0]])begin
+            tick;
+            acc_lat = acc_lat +'d1;
+            if (acc_lat > 'd500)begin
+                $display("acc_lat wait too long!!!");
+                $finish;
+            end
+               
+        end
+        acc_lat = 0;
+        
         if (curr_idx=='d9)begin
             temp_total_addr = temp_total_addr + 1;
             acc_sram_write(.port_idx(port_idx), .read_valid('d0), .read_SubBankID(temp_total_addr[2:0]), .addr(temp_total_addr[7:3]));                
@@ -928,35 +947,35 @@ task READ_ACC_16x16;
     begin
         fork
             begin
-                acc_sram_read_wrap(.port_idx('d0), .addr('h1), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d0), .addr('h1), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_0_ready));
                 $display("ACC READ: Finish port 0 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d1), .addr('h3), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d1), .addr('h3), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_1_ready));
                 $display("ACC READ: Finish port 1 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d2), .addr('h5), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d2), .addr('h5), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_2_ready));
                 $display("ACC READ: Finish port 2 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d3), .addr('h7), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d3), .addr('h7), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_3_ready));
                 $display("ACC READ: Finish port 3 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d4), .addr('h9), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d4), .addr('h9), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_4_ready));
                 $display("ACC READ: Finish port 4 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d5), .addr('hb), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d5), .addr('hb), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_5_ready));
                 $display("ACC READ: Finish port 5 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d6), .addr('hd), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d6), .addr('hd), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_6_ready));
                 $display("ACC READ: Finish port 6 inst");
             end
             begin
-                acc_sram_read_wrap(.port_idx('d7), .addr('hf), .sub_bank_id('h0), .length('d16));
+                acc_sram_read_wrap(.port_idx('d7), .addr('hf), .sub_bank_id('h0), .length('d16), .io_acc_read_ready(io_acc_read_7_ready));
                 $display("ACC READ: Finish port 7 inst");
             end
         join

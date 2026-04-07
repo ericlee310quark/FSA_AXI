@@ -563,6 +563,7 @@ module InputDelayer(
   wire [9:0] out_15_mantissa = delay ? out_delay_r_119_mantissa : in_data_15_mantissa;	
   always @(posedge clock) begin	
     if(reset)begin
+      delay_r <= 'd0;
       out_delay_r_sign    <= 'd0;
       out_delay_r_exp   <= 'd0;
       out_delay_r_mantissa    <= 'd0;
